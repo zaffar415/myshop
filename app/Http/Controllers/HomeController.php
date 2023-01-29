@@ -32,7 +32,7 @@ class HomeController extends Controller
 
     public function shop(Request $request)
     {        
-        $products = Product::with('user');
+        $products = Product::with('user') ;
         $user = auth()->user();
         if($user) {
             $products->whereHas('user', function($q) use ($user) {
